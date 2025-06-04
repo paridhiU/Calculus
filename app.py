@@ -6,13 +6,6 @@ import re
 import zipfile
 import os
 
-def unzip_faiss_index():
-    zip_path = "faiss_index.zip"
-    extract_dir = "faiss_index"
-
-    if not os.path.exists(extract_dir):
-        with zipfile.ZipFile(zip_path, 'r') as zip_ref:
-            zip_ref.extractall(extract_dir)
 
 st.set_page_config(page_title="Calculus Q&A", layout="wide")
 st.title("📚 Ask Calculus")
