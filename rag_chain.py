@@ -7,18 +7,10 @@ from dotenv import load_dotenv
 import zipfile
 import os
 
-def unzip_faiss_index():
-    zip_path = "faiss_index.zip"
-    extract_dir = "faiss_index"
 
-    if not os.path.exists(extract_dir):
-        with zipfile.ZipFile(zip_path, 'r') as zip_ref:
-            zip_ref.extractall(extract_dir)
-
-load_dotenv()
 
 def get_rag_chain():
-    unzip_faiss_index()
+    
     # Load embedding model
     embedding_model_name = os.getenv("EMBEDDING_MODEL", "sentence-transformers/all-MiniLM-L6-v2")
     embeddings = HuggingFaceEmbeddings(model_name=embedding_model_name)
